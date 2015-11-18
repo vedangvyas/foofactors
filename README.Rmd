@@ -1,0 +1,6 @@
+---
+title: "README"
+author: "Jonathan Agyeman"
+---
+
+Practice pacakge for STAT 545
