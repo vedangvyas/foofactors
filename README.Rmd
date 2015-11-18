@@ -1,6 +1,7 @@
 ---
 title: "README"
 author: "Jonathan Agyeman"
+output: html_document
 ---
 
 Practice pacakge for STAT 545
