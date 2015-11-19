@@ -1,14 +1,10 @@
----
-title: "README"
-author: "Jonathan Agyeman"
-output: 
-  html_document: 
-    keep_md: yes
----
+# README
+Jonathan Agyeman  
 
 Practice pacakge for STAT 545
 
-```{r}
+
+```r
 #' Bind two factors together
 #'
 #' @param a factor
@@ -21,5 +17,4 @@ Practice pacakge for STAT 545
 fbind <- function(a,b){
   factor(c(as.character(a), as.character(b)))
 }
-
 ```
