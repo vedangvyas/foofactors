@@ -6,13 +6,13 @@ output:
 ---
 ### foofactors package
 
-The `foofactors` package has 3 function and tis is a demo of how the functions works.
+The `foofactors` package has 3 functions and this is a demo of how the functions work.
 
 ```{r}
 #install_github("jokagyeman/foofacotrs")
 library(foofactors)
 ```
-The first function is `fbind` which puts to factors together as one.
+The first function is `fbind` which puts two factors together as one.
 
 ```{r}
 #Here is an example,
