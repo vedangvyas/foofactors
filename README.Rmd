@@ -1,25 +1,32 @@
 ---
-title: "README"
-author: "Jonathan Agyeman"
-output: 
-  html_document: 
-    keep_md: yes
----
+### foofactors package
 
-Practice pacakge for STAT 545
+The `foofactors` package has 3 function and tis is a demo of how the functions works.
 
 ```{r}
-#' Bind two factors together
-#'
-#' @param a factor
-#' @param b factor
-#'
-#' @return factor
-#' @export
-#' @examples
-#' fbind(iris$Species[c(1,51,101)], PlantGrowth$group[c(1,11,21)])
-fbind <- function(a,b){
-  factor(c(as.character(a), as.character(b)))
-}
+#install_github("jokagyeman/foofacotrs")
+library(foofactors)
+```
+The first function is `fbind` which puts to factors together as one.
 
+```{r}
+#Here is an example,
+
+fbind(iris$Species[c(1,51,101)], PlantGrowth$group[c(1,11,21)])
+```
+
+The second function is `freq_out`, which gives you a dataframe with factors and their frequency.
+
+```{r}
+# Here is an example
+
+freq_out(iris$Species)
+
+```
+
+The third function is `f_keep`, which keeps factor levels as they are in the r object.
+
+```{r}
+sons <- factor(c("John", "Caleb", "Joel"))
+f_keep(sons)
 ```
