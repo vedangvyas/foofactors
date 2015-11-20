@@ -1,4 +1,9 @@
 ---
+output: 
+  html_document: 
+    keep_md: yes
+---
+---
 ### foofactors package
 
 The `foofactors` package has 3 function and tis is a demo of how the functions works.
