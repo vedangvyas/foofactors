@@ -14,10 +14,54 @@ vignette: >
 #install_github("jokagyeman/foofacotrs")
 library(foofactors)
 
-fbind(iris$Species[c(1,51,101)], PlantGrowth$group[c(1,11,21)])
 
-freq_out(iris$Species)
+#' Bind two factors together
+#'
+#' @param a factor
+#' @param b factor
+#'
+#' @return factor
+#' @export
+#' @examples
+#' fbind(iris$Species[c(1,51,101)], PlantGrowth$group[c(1,11,21)])
+fbind <- function(a,b){
+  factor(c(as.character(a), as.character(b)))
+}
 
-f_keep(sons)
 
+
+
+
+#' Make a frequency table for a factor
+#'
+#' @param x factor
+#'
+#' @return tbl_df
+#' @export
+#' @examples
+#' freq_out(iris$Species)
+freq_out <- function(x) {
+  xdf <- dplyr::data_frame(x)
+  dplyr::count(xdf, x)
+}
+
+
+
+
+
+
+#' Print factor levels as they are
+#'
+#' @param x factor
+#'
+#' @return factor
+#' @export
+#'
+#' @examples
+#'  x <- factor(c("He", "Came", "To", "Sch"))
+#'  f_keep(x)
+#'
+f_keep <- function(x){
+  reorder(x, 1:length(x))
+}
 ```
