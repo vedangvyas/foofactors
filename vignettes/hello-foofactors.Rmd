@@ -9,4 +9,15 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-foofactors package
+###foofactors package
+```{}
+#install_github("jokagyeman/foofacotrs")
+library(foofactors)
+
+fbind(iris$Species[c(1,51,101)], PlantGrowth$group[c(1,11,21)])
+
+freq_out(iris$Species)
+
+f_keep(sons)
+
+```
