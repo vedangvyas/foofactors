@@ -10,13 +10,9 @@
 #'
 #'
 f_nchar <- function(x){
-
   fct <- reorder(x, 1:length(x))
-
   num.char <- nchar(levels(fct))
-
   dat <- data.frame(fct,num.char)
-
   dat
 }
 

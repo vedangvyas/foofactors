@@ -13,8 +13,16 @@ vignette: >
 ```{}
 #install_github("jokagyeman/foofacotrs")
 library(foofactors)
+```
 
 
+
+#`fbind()`
+
+##Description
+The first function is `fbind` which puts two factors together as one.
+
+```{}
 #' Bind two factors together
 #'
 #' @param a factor
@@ -27,11 +35,16 @@ library(foofactors)
 fbind <- function(a,b){
   factor(c(as.character(a), as.character(b)))
 }
+```
 
 
 
+#`freq_out()`
 
+##Description
+The second function is `freq_out`, which gives you a dataframe with factors and their frequency.
 
+```{}
 #' Make a frequency table for a factor
 #'
 #' @param x factor
@@ -44,12 +57,15 @@ freq_out <- function(x) {
   xdf <- dplyr::data_frame(x)
   dplyr::count(xdf, x)
 }
+```
 
 
+#`f_keep()`
 
+##Description
+The third function is `f_keep`, which prints factor levels as they are in the r object.
 
-
-
+```{}
 #' Print factor levels as they are
 #'
 #' @param x factor
@@ -64,4 +80,32 @@ freq_out <- function(x) {
 f_keep <- function(x){
   reorder(x, 1:length(x))
 }
+```
+
+
+
+#`f_nchar()`
+
+##Description
+This function counts the length of factor level names and prints it in a table arrange in descending order.
+
+```{}
+#' Number of Characters in the level name
+#'
+#' @param x factor
+#'
+#' @return data frame with levels and number of characters
+#' @export
+#'
+#' @examples Subjects <- factor(c("Mathematics", "Statistics", "English", "French"))
+#'          f_nchar(Subjects)
+#'
+#'
+f_nchar <- function(x){
+  fct <- reorder(x, 1:length(x))
+  num.char <- nchar(levels(fct))
+  dat <- data.frame(fct,num.char)
+  dat
+}
+
 ```
