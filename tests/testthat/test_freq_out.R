@@ -15,7 +15,7 @@ test_that("Factor with a number of levels",{
 
 
 test_that("Numbers being used",{
-  score <- list(1,2,2,3,4)
+  score <- c(1,2,2,3,4)
   expect_error(freq_out(score))
 })
 

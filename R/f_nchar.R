@@ -10,6 +10,7 @@
 #'
 #'
 f_nchar <- function(x){
+  assertthat::assert_that(is.factor(x))
   fct <- reorder(x, 1:length(x))
   num.char <- nchar(levels(fct))
   dat <- data.frame(fct,num.char)

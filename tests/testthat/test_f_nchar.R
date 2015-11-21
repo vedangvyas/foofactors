@@ -14,8 +14,9 @@ test_that("Number of characters for each level",{
 
 
 test_that("Non factors",{
-  Drink<- list(2, 3)
+  Drink<- c(2, 3,4)
   expect_error(f_nchar(Drink))
 })
+
 
 

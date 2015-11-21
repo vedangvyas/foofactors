@@ -10,6 +10,7 @@
 #'  f_keep(x)
 #'
 f_keep <- function(x){
+  assertthat::assert_that(is.factor(x))
   reorder(x, 1:length(x))
 }
 

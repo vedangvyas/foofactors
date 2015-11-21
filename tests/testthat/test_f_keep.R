@@ -12,6 +12,6 @@ expect_identical(levels(f_keep(x)), c("He", "Came", "To", "Sch"))
 })
 
 test_that("Does it work for character object ",{
-  x <- list("He", "Came", "To", "Sch")
+  x <- c("He", "Came", "To", "Sch")
   expect_error(f_keep(x))
 })
