@@ -9,13 +9,14 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-###foofactors package
+### foofactors package
+
+The `foofactors` package has 3 functions and this is a demo of how the functions work.
+
 ```{}
 #install_github("jokagyeman/foofacotrs")
 library(foofactors)
 ```
-
-
 
 #`fbind()`
 
@@ -23,20 +24,10 @@ library(foofactors)
 The first function is `fbind` which puts two factors together as one.
 
 ```{}
-#' Bind two factors together
-#'
-#' @param a factor
-#' @param b factor
-#'
-#' @return factor
-#' @export
-#' @examples
-#' fbind(iris$Species[c(1,51,101)], PlantGrowth$group[c(1,11,21)])
-fbind <- function(a,b){
-  factor(c(as.character(a), as.character(b)))
-}
-```
+#Here is an example,
 
+fbind(iris$Species[c(1,51,101)], PlantGrowth$group[c(1,11,21)])
+```
 
 
 #`freq_out()`
@@ -45,18 +36,10 @@ fbind <- function(a,b){
 The second function is `freq_out`, which gives you a dataframe with factors and their frequency.
 
 ```{}
-#' Make a frequency table for a factor
-#'
-#' @param x factor
-#'
-#' @return tbl_df
-#' @export
-#' @examples
-#' freq_out(iris$Species)
-freq_out <- function(x) {
-  xdf <- dplyr::data_frame(x)
-  dplyr::count(xdf, x)
-}
+# Here is an example
+
+freq_out(iris$Species)
+
 ```
 
 
@@ -66,22 +49,12 @@ freq_out <- function(x) {
 The third function is `f_keep`, which prints factor levels as they are in the r object.
 
 ```{}
-#' Print factor levels as they are
-#'
-#' @param x factor
-#'
-#' @return factor
-#' @export
-#'
-#' @examples
-#'  x <- factor(c("He", "Came", "To", "Sch"))
-#'  f_keep(x)
-#'
-f_keep <- function(x){
-  reorder(x, 1:length(x))
-}
-```
+# Here is an example
 
+sons <- factor(c("John", "Caleb", "Joel"))
+
+f_keep(sons)
+```
 
 
 #`f_nchar()`
@@ -90,22 +63,11 @@ f_keep <- function(x){
 This function counts the length of factor level names and prints it in a table arrange in descending order.
 
 ```{}
-#' Number of Characters in the level name
-#'
-#' @param x factor
-#'
-#' @return data frame with levels and number of characters
-#' @export
-#'
-#' @examples Subjects <- factor(c("Mathematics", "Statistics", "English", "French"))
-#'          f_nchar(Subjects)
-#'
-#'
-f_nchar <- function(x){
-  fct <- reorder(x, 1:length(x))
-  num.char <- nchar(levels(fct))
-  dat <- data.frame(fct,num.char)
-  dat
-}
+# Here is an example
+
+Subjects <- factor(c("Mathematics", "Statistics", "English", "French"))
+
+f_nchar(Subjects)
+
 
 ```
