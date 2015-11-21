@@ -10,7 +10,7 @@ f_keep(x)
 \item{x}{factor}
 }
 \value{
-factor
+factor with factor levels in order in which levels appear in oject.
 }
 \description{
 Print factor levels as they are

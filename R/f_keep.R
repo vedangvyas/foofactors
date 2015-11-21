@@ -2,7 +2,7 @@
 #'
 #' @param x factor
 #'
-#' @return factor
+#' @return factor with factor levels in order in which levels appear in oject.
 #' @export
 #'
 #' @examples

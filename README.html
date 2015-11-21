@@ -67,12 +67,23 @@ img {
 <p>The <code>foofactors</code> package has 3 functions and this is a demo of how the functions work.</p>
 <pre class="r"><code>#install_github(&quot;jokagyeman/foofacotrs&quot;)
 library(foofactors)</code></pre>
+</div>
+<div id="fbind" class="section level1">
+<h1>fbind()</h1>
+<div id="description" class="section level2">
+<h2>Description</h2>
 <p>The first function is <code>fbind</code> which puts two factors together as one.</p>
 <pre class="r"><code>#Here is an example,
 
 fbind(iris$Species[c(1,51,101)], PlantGrowth$group[c(1,11,21)])</code></pre>
 <pre><code>## [1] setosa     versicolor virginica  ctrl       trt1       trt2      
 ## Levels: ctrl setosa trt1 trt2 versicolor virginica</code></pre>
+</div>
+</div>
+<div id="freq_out" class="section level1">
+<h1>freq_out()</h1>
+<div id="description-1" class="section level2">
+<h2>Description</h2>
 <p>The second function is <code>freq_out</code>, which gives you a dataframe with factors and their frequency.</p>
 <pre class="r"><code># Here is an example
 
@@ -84,14 +95,41 @@ freq_out(iris$Species)</code></pre>
 ## 1     setosa    50
 ## 2 versicolor    50
 ## 3  virginica    50</code></pre>
-<p>The third function is <code>f_keep</code>, which keeps factor levels as they are in the r object.</p>
-<pre class="r"><code>sons &lt;- factor(c(&quot;John&quot;, &quot;Caleb&quot;, &quot;Joel&quot;))
+</div>
+</div>
+<div id="f_keep" class="section level1">
+<h1>f_keep()</h1>
+<div id="description-2" class="section level2">
+<h2>Description</h2>
+<p>The third function is <code>f_keep</code>, which prints factor levels as they are in the r object.</p>
+<pre class="r"><code># Here is an example
+
+sons &lt;- factor(c(&quot;John&quot;, &quot;Caleb&quot;, &quot;Joel&quot;))
+
 f_keep(sons)</code></pre>
 <pre><code>## [1] John  Caleb Joel 
 ## attr(,&quot;scores&quot;)
 ## Caleb  Joel  John 
 ##     2     3     1 
 ## Levels: John Caleb Joel</code></pre>
+</div>
+</div>
+<div id="f_nchar" class="section level1">
+<h1>f_nchar()</h1>
+<div id="description-3" class="section level2">
+<h2>Description</h2>
+<p>This function counts the length of factor level names and prints it in a table arrange in descending order.</p>
+<pre class="r"><code># Here is an example
+
+Subjects &lt;- factor(c(&quot;Mathematics&quot;, &quot;Statistics&quot;, &quot;English&quot;, &quot;French&quot;))
+
+f_nchar(Subjects)</code></pre>
+<pre><code>##           fct num.char
+## 1 Mathematics       11
+## 2  Statistics       10
+## 3     English        7
+## 4      French        6</code></pre>
+</div>
 </div>
 
 
